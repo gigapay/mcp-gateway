@@ -15,7 +15,7 @@ ENV DOCKER_CONTAINER=true \
     PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium-browser \
     CHROMIUM_FLAGS="--disable-software-rasterizer --disable-dev-shm-usage" \
     CHROME_BIN=/usr/bin/chromium-browser \
-    CHROME_PATH=/usr/lib/chromium/ \
+    CHROME_PATH=/usr/lib/chromium/
 
 WORKDIR /usr/src/app
 
