@@ -19,13 +19,13 @@ debug:
 
 servers:
   puppeteer:
-    command: tsx
+    command: npx
     args:
       - "-y"
       - "@modelcontextprotocol/server-puppeteer"
 
   sequential-thinking:
-    command: npx,
+    command: npx
     args: 
       - "-y"
       - "@modelcontextprotocol/server-sequential-thinking"
