@@ -18,21 +18,14 @@ debug:
 #       - "your-secure-token"
 
 servers:
-  # run an MCP server with npx
-  filesystem:
-    command: npx
-    args:
-      - -y
-      - "@modelcontextprotocol/server-filesystem"
-      - "/home/aaron"
-
-  # run a an MCP server from local source
   puppeteer:
     command: tsx
     args:
-      - "/home/aaron/AI/MCP-Servers/src/puppeteer/index.ts"
+      - "-y"
+      - "@modelcontextprotocol/server-puppeteer"
 
-  youtube:
-    command: tsx
-    args:
-      - "/home/aaron/AI/mcp-server-youtube-transcript/src/index.ts"
+  sequential-thinking:
+    command: npx,
+    args: 
+      - "-y"
+      - "@modelcontextprotocol/server-sequential-thinking"
