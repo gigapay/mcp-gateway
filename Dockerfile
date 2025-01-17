@@ -1,6 +1,7 @@
 FROM node:23-alpine
 
 RUN apk add --no-cache \
+    sudo\
     # Chrome dependencies
     chromium\
     ttf-freefont \
@@ -18,8 +19,14 @@ WORKDIR /usr/src/app
 COPY package.json .
 COPY package-lock.json .
 
+RUN adduser -D gigapay && \
+    adduser gigapay wheel && \
+    echo "gigapay ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+USER gigapay
+
 # Install dependencies
-RUN npm install
+RUN sudo npm install
 
 # Copy the rest of the application files (optional if you'd like to build/run an application)
 COPY . .
